@@ -111,7 +111,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
               <span style={{ background: "#f0edf8", color: "#6b4fa0", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
               <span style={{ background: "#ede9f5", color: "#5a3d8a", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Geopolitics</span>
               <span>August 23, 2026</span>
-              <span>5 min read</span>
+              <span>3 min read</span>
             </div>
             <a href="/articles/hormuz-oil-market-august-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
               Read analysis →

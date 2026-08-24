@@ -1,5 +1,6 @@
 import { getPostBySlug, getAllPosts } from "../../lib/posts";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import type { Metadata } from "next";
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -9,6 +10,29 @@ export async function generateStaticParams() {
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+  return {
+    title: `${post.title} | FaultLines`,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://faultlines-jade.vercel.app/articles/${slug}`,
+      siteName: "FaultLines",
+      locale: "en_GB",
+      type: "article",
+      publishedTime: post.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+    },
+  };
+}
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
@@ -36,8 +60,8 @@ export default async function ArticlePage({ params }: Props) {
         <MDXRemote source={post.content} />
       </div>
       <div style={{ marginTop: "3rem", paddingTop: "1.5rem", borderTop: "1px solid #ede9f5", fontSize: "13px", color: "#888" }}>
-  Written by <span style={{ color: "#1a1a1a", fontWeight: 500 }}>Ruqayya Ghuwel</span>
-</div>
+        Written by <span style={{ color: "#1a1a1a", fontWeight: 500 }}>Ruqayya Ghuwel</span>
+      </div>
     </main>
   );
 }
