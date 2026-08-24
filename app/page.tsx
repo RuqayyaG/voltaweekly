@@ -21,22 +21,18 @@ const SYMBOLS = [
   { symbol: "GBP/USD", name: "GBP/USD", prefix: "" },
   { symbol: "XAU/USD", name: "Gold", prefix: "$" },
   { symbol: "BTC/USD", name: "Bitcoin", prefix: "$" },
-  { symbol: "ETH/USD", name: "Ethereum", prefix: "$" },
-  { symbol: "OIL", name: "Crude Oil", prefix: "$" },
   { symbol: "NVDA", name: "Nvidia", prefix: "$" },
 ];
-
 export default function Home() {
   const [tickerItems, setTickerItems] = useState(FALLBACK);
 
   useEffect(() => {
-    const apiKey = process.env.NEXT_PUBLIC_TWELVE_DATA_KEY;
-    if (!apiKey) return;
-    const symbols = SYMBOLS.map((s) => s.symbol).join(",");
-    fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)
-      .then((r) => r.json())
-      .then((data) => {
-        const updated = SYMBOLS.map((s) => {
+const apiKey = process.env.NEXT_PUBLIC_TWELVE_DATA_KEY;
+console.log("API key present:", !!apiKey);
+if (!apiKey) return;    const symbols = SYMBOLS.map((s) => s.symbol).join(",");
+fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)      .then((r) => r.json())
+.then((data) => {
+  console.log("API response:", JSON.stringify(data));        const updated = SYMBOLS.map((s) => {
           const quote = data[s.symbol];
           if (!quote || quote.status === "error") return null;
           const price = parseFloat(quote.close);
@@ -74,15 +70,21 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Nav */}
+    {/* Nav */}
       <nav style={{ background: "#fff", borderBottom: "1px solid #e8e4f0", padding: "0 2rem", height: "52px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ fontFamily: "Georgia, serif", fontSize: "22px", letterSpacing: "-0.5px", fontWeight: 500 }}>
           Fault<span style={{ color: "#6b4fa0" }}>Lines</span>
         </div>
         <div style={{ display: "flex", gap: "1.5rem" }}>
-          {["Geopolitics", "Macro", "Markets", "Policy", "Data"].map((item) => (
-            <a key={item} style={{ fontSize: "11px", color: "#666", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer" }} onMouseEnter={e => (e.currentTarget.style.color = "#6b4fa0")} onMouseLeave={e => (e.currentTarget.style.color = "#666")}>
-              {item}
+          {[
+            { label: "Geopolitics", href: "/category/geopolitics" },
+            { label: "Macro", href: "/category/macro" },
+            { label: "Markets", href: "/category/markets" },
+            { label: "Policy", href: "/category/policy" },
+            { label: "Data", href: "/category/data" },
+          ].map((item) => (
+            <a key={item.label} href={item.href} style={{ fontSize: "11px", color: "#666", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer" }} onMouseEnter={e => (e.currentTarget.style.color = "#6b4fa0")} onMouseLeave={e => (e.currentTarget.style.color = "#666")}>
+              {item.label}
             </a>
           ))}
         </div>
@@ -91,7 +93,7 @@ export default function Home() {
         </button>
       </nav>
 
-      {/* Hero */}
+{/* Hero */}
       <div style={{ borderBottom: "1px solid #ede9f5", padding: "2.5rem 2rem 2rem", background: "#fff" }}>
         <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.12em", color: "#6b4fa0", fontWeight: 600, marginBottom: "1rem" }}>
           Featured analysis
@@ -99,19 +101,19 @@ export default function Home() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "3rem", alignItems: "start" }}>
           <div>
             <h1 style={{ fontFamily: "Georgia, serif", fontSize: "36px", fontWeight: 500, lineHeight: 1.15, color: "#1a1a1a", marginBottom: "1rem", letterSpacing: "-0.5px" }}>
-              Riyadh is pricing yuan oil deals. Traders are{" "}
-              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>reading it wrong.</em>
+              Oil is at $94 and the market still{" "}
+              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>thinks this ends cleanly.</em>
             </h1>
             <p style={{ fontSize: "15px", color: "#444", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-              Everyone&apos;s calling it dedollarisation. That framing has become lazy shorthand for something more calculated. Saudi Arabia still parks its reserves in Treasuries. What&apos;s changed is its willingness to let Washington wonder if that&apos;s permanent.
+              Brent crude pushed back toward $94 this week, reversing a dip that came after US officials talked up a deal with Tehran. There is no deal. Shipping through Hormuz is running at half its pre-war volume and Bessent is threatening sanctions that have never been seen before. The consensus is still that this resolves orderly. It might not.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "#888", marginBottom: "1.25rem", flexWrap: "wrap" }}>
-              <span style={{ background: "#ede9f5", color: "#5a3d8a", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Geopolitics</span>
               <span style={{ background: "#f0edf8", color: "#6b4fa0", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
-              <span>June 12, 2026</span>
-              <span>8 min read</span>
+              <span style={{ background: "#ede9f5", color: "#5a3d8a", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Geopolitics</span>
+              <span>August 23, 2026</span>
+              <span>5 min read</span>
             </div>
-            <a style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
+            <a href="/articles/hormuz-oil-market-august-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
               Read analysis →
             </a>
           </div>
@@ -138,20 +140,17 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Risk dashboard */}
       <div style={{ background: "#f4f2fa", borderTop: "1px solid #e0ddf0", borderBottom: "1px solid #e0ddf0", padding: "1.5rem 2rem" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1rem" }}>
           <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.1em", color: "#888", fontWeight: 500 }}>Geopolitical risk dashboard</span>
-          <span style={{ fontSize: "11px", color: "#aaa", cursor: "pointer" }}>Full dashboard →</span>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "10px" }}>
           {[
-            { label: "Global risk index", val: 74, sub: "Elevated · up from 68 last month", color: "#a33030" },
-            { label: "US–China tension", val: 81, sub: "High · Taiwan Strait activity up", color: "#c0601a" },
-            { label: "Middle East volatility", val: 62, sub: "Moderate · ceasefire holding", color: "#b09820" },
-            { label: "EUR political risk", val: 38, sub: "Low · post-election stability", color: "#2d7a4f" },
-          ].map((item) => (
+{ label: "Global risk index", val: 81, sub: "High · Iran sanctions escalating", color: "#a33030" },
+{ label: "US–China tension", val: 79, sub: "High · trade grinding, no acute flashpoint", color: "#c0601a" },
+{ label: "Middle East volatility", val: 88, sub: "Critical · Hormuz at half capacity", color: "#a33030" },
+{ label: "EUR political risk", val: 42, sub: "Moderate · energy price pressure rising", color: "#b09820" },          ].map((item) => (
             <div key={item.label} style={{ background: "#fff", border: "1px solid #e8e4f0", borderRadius: "6px", padding: "1rem" }}>
               <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.07em", color: "#888", marginBottom: "6px", fontWeight: 500 }}>{item.label}</div>
               <div style={{ fontSize: "24px", fontWeight: 500, lineHeight: 1, marginBottom: "4px", color: item.color }}>
@@ -170,43 +169,44 @@ export default function Home() {
       <div style={{ padding: "2rem", background: "#fff" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "2px solid #ede9f5", paddingBottom: "0.5rem", marginBottom: "1.5rem" }}>
           <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}>Latest analysis</span>
-          <span style={{ fontSize: "11px", color: "#aaa", cursor: "pointer" }}>All articles →</span>
+          <a href="/articles" style={{ fontSize: "11px", color: "#aaa", cursor: "pointer", textDecoration: "none" }}>All articles →</a>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "2rem" }}>
           {[
-            {
-              tag: "Macro", tagBg: "#ede9f5", tagColor: "#6b4fa0",
-              slug: "/articles/the-deal-that-doesnt-change-anything",
-              title: "The deal that doesn't change anything.",
-              excerpt: "A US-Iran ceasefire memorandum has been framed as a breakthrough, but with energy flows not expected to recover until September, inflation set to stay above target into 2027, and Iran retaining effective control of the Strait, markets are pricing managed uncertainty rather than resolution.",
-              date: "June 17, 2026", read: "4 min read",
-            },
-            {
-              tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#6b4fa0",
-              slug: "/articles/test-post",
-              title: "India is buying Russian oil and courting Washington at the same time. It's working.",
-              excerpt: "Modi gets called opportunistic for this. The more useful question is why everyone else isn't doing it. Delhi has rare earth supply chains both sides need and it's quietly making them pay for access.",
-              date: "June 8, 2026", read: "9 min read",
-            },
-            {
-              tag: "Markets", tagBg: "#ede9f5", tagColor: "#6b4fa0",
-              slug: "/articles/test-post",
-              title: "The yield curve inverted again. The recession crowd is probably wrong again too.",
-              excerpt: "Three years of inversion calls, three years of waiting. What's driving the curve this time looks more like a term premium repricing than anything recessionary. The distinction matters if you're positioned for a hard landing.",
-              date: "June 5, 2026", read: "7 min read",
-            },
-          ].map((a) => (
-            <a key={a.title} href={a.slug} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer", textDecoration: "none", display: "block" }}>
-              <span style={{ background: a.tagBg, color: a.tagColor, padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>
-                {a.tag}
-              </span>
-              <h2 style={{ fontFamily: "Georgia, serif", fontSize: "17px", fontWeight: 500, lineHeight: 1.3, color: "#1a1a1a", margin: "0.5rem 0" }}>
-                {a.title}
-              </h2>
-              <p style={{ fontSize: "13px", color: "#555", lineHeight: 1.65, marginBottom: "0.75rem" }}>{a.excerpt}</p>
-              <div style={{ fontSize: "11px", color: "#aaa" }}>{a.date} · {a.read}</div>
-            </a>
-          ))}
+  {
+    tag: "Markets", tagBg: "#f0edf8", tagColor: "#6b4fa0",
+    slug: "/articles/hormuz-oil-market-august-2026",
+    title: "Oil is at $94 and the market still thinks this ends cleanly",
+    excerpt: "Brent crude hit its highest level since late July this week. Shipping through Hormuz is running at less than half its pre-war volume. And somehow the consensus is still that this resolves in an orderly way.",
+    date: "August 23, 2026", read: "3 min read",
+  },
+  {
+    tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
+    slug: "/articles/us-tariffs-china-asean-august-2026",
+    title: "Trump's tariffs were supposed to hurt China. They've made it dominant in ASEAN instead.",
+    excerpt: "New data shows Chinese firms have expanded market share in over 40% of major goods categories globally. In Southeast Asia, two-way trade with China just hit $772 billion. The tariff strategy has a problem.",
+    date: "August 23, 2026", read: "2 min read",
+  },
+  {
+    tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
+    slug: "/articles/trump-iran-sanctions-economic-warfare-august-2026",
+    title: "Bessent says the Iran sanctions will be unlike anything seen before. Tehran has heard that before.",
+    excerpt: "The US has been sanctioning Iran since 1979. A Congressional Research Service report describes them as the most extensive sanctions the US maintains on any country. Iran is still there.",
+    date: "August 23, 2026", read: "2 min read",
+  },
+].map((a) => (
+  <a key={a.title} href={a.slug} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer", textDecoration: "none", display: "block" }}>
+    <span style={{ background: a.tagBg, color: a.tagColor, padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>
+      {a.tag}
+    </span>
+    <h2 style={{ fontFamily: "Georgia, serif", fontSize: "17px", fontWeight: 500, lineHeight: 1.3, color: "#1a1a1a", margin: "0.5rem 0" }}>
+      {a.title}
+    </h2>
+    <p style={{ fontSize: "13px", color: "#555", lineHeight: 1.65, marginBottom: "0.75rem" }}>{a.excerpt}</p>
+    <div style={{ fontSize: "11px", color: "#aaa" }}>{a.date} · {a.read}</div>
+  </a>
+))}
+            
         </div>
       </div>
 
