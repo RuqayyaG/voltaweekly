@@ -24,7 +24,7 @@ const SYMBOLS = [
   { symbol: "NVDA", name: "Nvidia", prefix: "$" },
 ];
 export default function Home() {
-  const [tickerItems, setTickerItems] = useState(FALLBACK);
+  const [tickerItems, setTickerItems] = useState(FALLBACK); const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
 const apiKey = process.env.NEXT_PUBLIC_TWELVE_DATA_KEY;
@@ -70,12 +70,12 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         </div>
       </div>
 
-    {/* Nav */}
+{/* Nav */}
       <nav style={{ background: "#fff", borderBottom: "1px solid #e8e4f0", padding: "0 2rem", height: "52px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ fontFamily: "Georgia, serif", fontSize: "22px", letterSpacing: "-0.5px", fontWeight: 500 }}>
           Fault<span style={{ color: "#6b4fa0" }}>Lines</span>
         </div>
-        <div style={{ display: "flex", gap: "1.5rem" }}>
+        <div className="desktop-nav" style={{ display: "flex", gap: "1.5rem" }}>
           {[
             { label: "Geopolitics", href: "/category/geopolitics" },
             { label: "Macro", href: "/category/macro" },
@@ -88,10 +88,33 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
             </a>
           ))}
         </div>
-        <button style={{ background: "#2d7a4f", color: "#fff", border: "none", padding: "6px 16px", borderRadius: "3px", fontSize: "12px", fontWeight: 500, cursor: "pointer" }}>
-          Subscribe
-        </button>
+        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <button style={{ background: "#2d7a4f", color: "#fff", border: "none", padding: "6px 16px", borderRadius: "3px", fontSize: "12px", fontWeight: 500, cursor: "pointer" }}>
+            Subscribe
+          </button>
+<button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} style={{ background: "none", border: "none", cursor: "pointer", padding: "4px", flexDirection: "column", gap: "5px" }}>            <span style={{ display: "block", width: "22px", height: "2px", background: "#1a1a1a", borderRadius: "2px" }} />
+            <span style={{ display: "block", width: "22px", height: "2px", background: "#1a1a1a", borderRadius: "2px" }} />
+            <span style={{ display: "block", width: "22px", height: "2px", background: "#1a1a1a", borderRadius: "2px" }} />
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div style={{ background: "#fff", borderBottom: "1px solid #e8e4f0", padding: "1rem 2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
+          {[
+            { label: "Geopolitics", href: "/category/geopolitics" },
+            { label: "Macro", href: "/category/macro" },
+            { label: "Markets", href: "/category/markets" },
+            { label: "Policy", href: "/category/policy" },
+            { label: "Data", href: "/category/data" },
+          ].map((item) => (
+            <a key={item.label} href={item.href} style={{ fontSize: "14px", color: "#1a1a1a", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+              {item.label}
+            </a>
+          ))}
+        </div>
+      )}
 
 {/* Hero */}
       <div style={{ borderBottom: "1px solid #ede9f5", padding: "2.5rem 2rem 2rem", background: "#fff" }}>
@@ -235,6 +258,8 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
     .nl-form button { width: 100% !important; }
     .newsletter { flex-direction: column !important; }
     .market-pulse { display: none !important; }
+     .desktop-nav { display: none !important; }
+     .hamburger { display: flex !important; }
   }
 `}</style>
 

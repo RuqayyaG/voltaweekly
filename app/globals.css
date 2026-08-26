@@ -10,3 +10,10 @@ main {
   background: #fafafa;
   color: #1a1a1a;
 }
+
+.hamburger { display: none; }
+
+@media (max-width: 768px) {
+  .desktop-nav { display: none !important; }
+  .hamburger { display: flex !important; }
+}
