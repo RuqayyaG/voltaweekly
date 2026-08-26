@@ -98,8 +98,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.12em", color: "#6b4fa0", fontWeight: 600, marginBottom: "1rem" }}>
           Featured analysis
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "3rem", alignItems: "start" }}>
-          <div>
+        <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "3rem", alignItems: "start" }}>          <div>
             <h1 style={{ fontFamily: "Georgia, serif", fontSize: "36px", fontWeight: 500, lineHeight: 1.15, color: "#1a1a1a", marginBottom: "1rem", letterSpacing: "-0.5px" }}>
               Oil is at $94 and the market still{" "}
               <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>thinks this ends cleanly.</em>
@@ -119,7 +118,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           </div>
 
           {/* Sparklines */}
-          <div>
+                    <div className="market-pulse">
             <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888", marginBottom: "0.75rem", fontWeight: 500 }}>Market pulse</div>
             {[
               { name: "US 10Y yield", val: "4.38%", chg: "+0.06", up: true },
@@ -145,8 +144,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1rem" }}>
           <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.1em", color: "#888", fontWeight: 500 }}>Geopolitical risk dashboard</span>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "10px" }}>
-          {[
+        <div className="dash-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "10px" }}>          {[
 { label: "Global risk index", val: 81, sub: "High · Iran sanctions escalating", color: "#a33030" },
 { label: "US–China tension", val: 79, sub: "High · trade grinding, no acute flashpoint", color: "#c0601a" },
 { label: "Middle East volatility", val: 88, sub: "Critical · Hormuz at half capacity", color: "#a33030" },
@@ -171,8 +169,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}>Latest analysis</span>
           <a href="/articles" style={{ fontSize: "11px", color: "#aaa", cursor: "pointer", textDecoration: "none" }}>All articles →</a>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "2rem" }}>
-          {[
+        <div className="articles-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "2rem" }}>          {[
   {
     tag: "Markets", tagBg: "#f0edf8", tagColor: "#6b4fa0",
     slug: "/articles/hormuz-oil-market-august-2026",
@@ -211,15 +208,13 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
       </div>
 
       {/* Newsletter */}
-      <div style={{ padding: "2.5rem 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid #e8e4f0", gap: "2rem", background: "linear-gradient(135deg, #f4f2fa 0%, #edf5f0 100%)" }}>
-        <div>
-          <div style={{ fontFamily: "Georgia, serif", fontSize: "22px", fontWeight: 500, marginBottom: "0.5rem" }}>Sunday dispatch</div>
+{/* Newsletter */}
+      <div className="newsletter" style={{ padding: "2.5rem 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid #e8e4f0", gap: "2rem", background: "linear-gradient(135deg, #f4f2fa 0%, #edf5f0 100%)", flexWrap: "wrap" }}>        <div>          <div style={{ fontFamily: "Georgia, serif", fontSize: "22px", fontWeight: 500, marginBottom: "0.5rem" }}>Sunday dispatch</div>
           <p style={{ fontSize: "13px", color: "#555", lineHeight: 1.6, maxWidth: "380px" }}>
             One email a week. The political developments that actually moved markets, and the ones that should have but didn&apos;t. Written on Sundays, read with coffee.
           </p>
         </div>
-        <div style={{ display: "flex", gap: "8px", flexShrink: 0 }}>
-          <input type="email" placeholder="your@email.com" style={{ padding: "8px 14px", border: "1px solid #d0cce8", borderRadius: "3px", fontSize: "13px", background: "#fff", color: "#1a1a1a", width: "210px" }} />
+        <div className="nl-form" style={{ display: "flex", gap: "8px", flexShrink: 0 }}>          <input type="email" placeholder="your@email.com" style={{ padding: "8px 14px", border: "1px solid #d0cce8", borderRadius: "3px", fontSize: "13px", background: "#fff", color: "#1a1a1a", width: "210px" }} />
           <button style={{ background: "#6b4fa0", color: "#fff", border: "none", padding: "8px 18px", borderRadius: "3px", fontSize: "13px", fontWeight: 500, cursor: "pointer" }}>
             Subscribe
           </button>
@@ -227,11 +222,21 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
       </div>
 
       <style>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .dash-grid { grid-template-columns: 1fr 1fr !important; }
+    .articles-grid { grid-template-columns: 1fr !important; }
+    .nl-form { flex-direction: column !important; width: 100% !important; }
+    .nl-form input { width: 100% !important; }
+    .nl-form button { width: 100% !important; }
+    .newsletter { flex-direction: column !important; }
+    .market-pulse { display: none !important; }
+  }
+`}</style>
 
     </main>
   );

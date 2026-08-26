@@ -59,8 +59,8 @@ export default async function ArticlePage({ params }: Props) {
       <div className="article-body" style={{ fontSize: "16px", lineHeight: 1.8, color: "#333" }}>
         <MDXRemote source={post.content} />
       </div>
-      <div style={{ marginTop: "3rem", paddingTop: "1.5rem", borderTop: "1px solid #ede9f5", fontSize: "13px", color: "#888" }}>
-        Written by <span style={{ color: "#1a1a1a", fontWeight: 500 }}>Ruqayya Ghuwel</span>
+      <div style={{ marginTop: "3rem", paddingTop: "1.5rem", borderTop: "1px solid #ede9f5", fontSize: "13px", color: "var(--foreground)" }}>
+        Written by <span style={{ color: "#1a1a1", fontWeight: 500 }}>Ruqayya Ghuwel</span>
       </div>
     </main>
   );
