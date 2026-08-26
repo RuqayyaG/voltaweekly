@@ -257,7 +257,6 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
     .nl-form input { width: 100% !important; }
     .nl-form button { width: 100% !important; }
     .newsletter { flex-direction: column !important; }
-    .market-pulse { display: none !important; }
      .desktop-nav { display: none !important; }
      .hamburger { display: flex !important; }
   }
