@@ -82,6 +82,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
             { label: "Markets", href: "/category/markets" },
             { label: "Policy", href: "/category/policy" },
             { label: "Data", href: "/category/data" },
+            { label: "About", href: "/about" },
           ].map((item) => (
             <a key={item.label} href={item.href} style={{ fontSize: "11px", color: "#666", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer" }} onMouseEnter={e => (e.currentTarget.style.color = "#6b4fa0")} onMouseLeave={e => (e.currentTarget.style.color = "#666")}>
               {item.label}
@@ -89,9 +90,6 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           ))}
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          <button style={{ background: "#2d7a4f", color: "#fff", border: "none", padding: "6px 16px", borderRadius: "3px", fontSize: "12px", fontWeight: 500, cursor: "pointer" }}>
-            Subscribe
-          </button>
 <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} style={{ background: "none", border: "none", cursor: "pointer", padding: "4px", flexDirection: "column", gap: "5px" }}>            <span style={{ display: "block", width: "22px", height: "2px", background: "#1a1a1a", borderRadius: "2px" }} />
             <span style={{ display: "block", width: "22px", height: "2px", background: "#1a1a1a", borderRadius: "2px" }} />
             <span style={{ display: "block", width: "22px", height: "2px", background: "#1a1a1a", borderRadius: "2px" }} />
@@ -108,6 +106,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
             { label: "Markets", href: "/category/markets" },
             { label: "Policy", href: "/category/policy" },
             { label: "Data", href: "/category/data" },
+            { label: "About", href: "/about" },
           ].map((item) => (
             <a key={item.label} href={item.href} style={{ fontSize: "14px", color: "#1a1a1a", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.1em" }}>
               {item.label}
@@ -232,17 +231,33 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
 
       {/* Newsletter */}
 {/* Newsletter */}
-      <div className="newsletter" style={{ padding: "2.5rem 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid #e8e4f0", gap: "2rem", background: "linear-gradient(135deg, #f4f2fa 0%, #edf5f0 100%)", flexWrap: "wrap" }}>        <div>          <div style={{ fontFamily: "Georgia, serif", fontSize: "22px", fontWeight: 500, marginBottom: "0.5rem" }}>Sunday dispatch</div>
+      <div className="newsletter" style={{ padding: "2.5rem 2rem", display: "flex", alignItems: "center", justifyContent: "space-between", borderTop: "1px solid #e8e4f0", gap: "2rem", background: "linear-gradient(135deg, #f4f2fa 0%, #edf5f0 100%)", flexWrap: "wrap" }}>        <div>         
+         <div style={{ fontFamily: "Georgia, serif", fontSize: "22px", fontWeight: 500, marginBottom: "0.5rem" }}>Sunday dispatch</div>
           <p style={{ fontSize: "13px", color: "#555", lineHeight: 1.6, maxWidth: "380px" }}>
-            One email a week. The political developments that actually moved markets, and the ones that should have but didn&apos;t. Written on Sundays, read with coffee.
+            One email a week. The political developments that actually moved markets, and the ones that should have but didn&apos;t. Published on Sundays, read with coffee.
           </p>
         </div>
-        <div className="nl-form" style={{ display: "flex", gap: "8px", flexShrink: 0 }}>          <input type="email" placeholder="your@email.com" style={{ padding: "8px 14px", border: "1px solid #d0cce8", borderRadius: "3px", fontSize: "13px", background: "#fff", color: "#1a1a1a", width: "210px" }} />
-          <button style={{ background: "#6b4fa0", color: "#fff", border: "none", padding: "8px 18px", borderRadius: "3px", fontSize: "13px", fontWeight: 500, cursor: "pointer" }}>
-            Subscribe
-          </button>
-        </div>
-      </div>
+<div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+  <form onSubmit={async (e) => {
+  e.preventDefault();
+  const email = (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value;
+  const res = await fetch("/api/subscribe", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+  });
+  if (res.ok) {
+    alert("You're in. See you on Sunday.");
+  } else {
+    alert("Something went wrong. Try again.");
+  }
+}} style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+  <input name="email" type="email" placeholder="your@email.com" style={{ padding: "8px 14px", border: "1px solid #d0cce8", borderRadius: "3px", fontSize: "13px", background: "#fff", color: "#1a1a1a", flex: "1", minWidth: "200px" }} />
+  <button type="submit" style={{ background: "#6b4fa0", color: "#fff", border: "none", padding: "8px 18px", borderRadius: "3px", fontSize: "13px", fontWeight: 500, cursor: "pointer" }}>
+    Subscribe
+  </button>
+</form>
+</div>      </div>
 
       <style>{`
   @keyframes scroll {
