@@ -11,16 +11,16 @@
         Ruqayya Ghuwel
       </h1>
       <div style={{ fontSize: "16px", lineHeight: 1.8, color: "#333" }}>
-        <p style={{ marginBottom: "1.5rem" }}>
-          FaultLines is where I write about geopolitics and markets — specifically the places where they collide. Political decisions move capital. Capital shapes political decisions. Most coverage treats these as separate beats. They aren't.
-        </p>
-        <p style={{ marginBottom: "1.5rem" }}>
-          My background is in economics and politics. The further I got into both, the more obvious it became that you can't understand one without the other. A central bank decision is never just a monetary event. A trade war is never just about trade. That's what this site is about.
-        </p>
-        <p style={{ marginBottom: "1.5rem" }}>
-          I write the Sunday dispatch every week — one email covering the political developments that actually moved markets, and the ones that should have. You can subscribe below.
-        </p>
-      </div>
+  <p style={{ marginBottom: "1.5rem" }}>
+    I started FaultLines out of frustration. Economics and geopolitics shape everything; who wins elections, where capital flows, which countries gain leverage and which lose it. But most coverage is written for people who already understand it, buried in jargon that functions more as a gatekeeping mechanism than anything else.
+  </p>
+  <p style={{ marginBottom: "1.5rem" }}>
+    I am about to graduate with a joint honours degree in Economics and Politics. The further into both I got, the more obvious it became that separating them is a fiction. Sanctions are economic tools with political goals. Elections move currency markets. Trade policy is foreign policy. Crucially, none of it makes sense in isolation.
+  </p>
+  <p style={{ marginBottom: "1.5rem" }}>
+    The goal here is demystification. Understanding what's happening in the world shouldn't require a Bloomberg terminal or a PhD. It requires someone willing to explain it without the performance of complexity.
+  </p>
+</div>
       <div style={{ marginTop: "2.5rem", paddingTop: "2rem", borderTop: "1px solid #ede9f5" }}>
         <div style={{ fontFamily: "Georgia, serif", fontSize: "18px", fontWeight: 500, marginBottom: "0.75rem" }}>Get the Sunday dispatch</div>
         <form onSubmit={async (e) => {
