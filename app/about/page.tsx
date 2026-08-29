@@ -1,4 +1,4 @@
-export default function AboutPage() {
+"use client"; export default function AboutPage() {
   return (
     <main style={{ maxWidth: "680px", margin: "0 auto", padding: "3rem 2rem", fontFamily: "sans-serif", color: "#1a1a1a", minHeight: "100vh" }}>
       <a href="/" style={{ fontSize: "12px", color: "#6b4fa0", textDecoration: "none", display: "inline-block", marginBottom: "2rem" }}>
