@@ -130,7 +130,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "#888", marginBottom: "1.25rem", flexWrap: "wrap" }}>
               <span style={{ background: "#f0edf8", color: "#6b4fa0", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
-              <span>August 23, 2026</span>
+              <span>August 30, 2026</span>
               <span>3 min read</span>
             </div>
             <a href="/articles/hormuz-oil-market-august-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
@@ -196,21 +196,21 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
     slug: "/articles/hormuz-oil-market-august-2026",
     title: "Oil is at $94 and the market still thinks this ends cleanly",
     excerpt: "Brent crude hit its highest level since late July this week. Shipping through Hormuz is running at less than half its pre-war volume. And somehow the consensus is still that this resolves in an orderly way.",
-    date: "August 23, 2026", read: "3 min read",
+    date: "August 30, 2026", read: "3 min read",
   },
   {
     tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
     slug: "/articles/us-tariffs-china-asean-august-2026",
     title: "Trump's tariffs were supposed to hurt China. They've made it dominant in ASEAN instead.",
     excerpt: "New data shows Chinese firms have expanded market share in over 40% of major goods categories globally. In Southeast Asia, two-way trade with China just hit $772 billion. The tariff strategy has a problem.",
-    date: "August 23, 2026", read: "2 min read",
+    date: "August 30, 2026", read: "2 min read",
   },
   {
     tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
     slug: "/articles/trump-iran-sanctions-economic-warfare-august-2026",
     title: "Bessent says the Iran sanctions will be unlike anything seen before. Tehran has heard that before.",
     excerpt: "The US has been sanctioning Iran since 1979. A Congressional Research Service report describes them as the most extensive sanctions the US maintains on any country. Iran is still there.",
-    date: "August 23, 2026", read: "2 min read",
+    date: "August 30, 2026", read: "2 min read",
   },
 ].map((a) => (
   <a key={a.title} href={a.slug} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer", textDecoration: "none", display: "block" }}>
