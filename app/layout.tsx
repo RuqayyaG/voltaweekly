@@ -13,19 +13,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FaultLines",
+  title: "Volta",
   description: "Geopolitics and markets analysis. How political movements affect markets and vice versa.",
   openGraph: {
-    title: "FaultLines",
+    title: "Volta",
     description: "Geopolitics and markets analysis. How political movements affect markets and vice versa.",
     url: "https://faultlines-jade.vercel.app",
-    siteName: "FaultLines",
+    siteName: "Volta",
     locale: "en_GB",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "FaultLines",
+    title: "Volta",
     description: "Geopolitics and markets analysis. How political movements affect markets and vice versa.",
   },
 };

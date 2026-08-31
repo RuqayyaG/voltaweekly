@@ -2,7 +2,7 @@
   return (
     <main style={{ maxWidth: "680px", margin: "0 auto", padding: "3rem 2rem", fontFamily: "sans-serif", color: "#1a1a1a", minHeight: "100vh" }}>
       <a href="/" style={{ fontSize: "12px", color: "#6b4fa0", textDecoration: "none", display: "inline-block", marginBottom: "2rem" }}>
-        ← Back to FaultLines
+        ← Back to Volta
       </a>
       <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.12em", color: "#6b4fa0", fontWeight: 600, marginBottom: "0.75rem" }}>
         About
@@ -12,7 +12,7 @@
       </h1>
       <div style={{ fontSize: "16px", lineHeight: 1.8, color: "#333" }}>
   <p style={{ marginBottom: "1.5rem" }}>
-    I started FaultLines out of frustration. Economics and geopolitics shape everything; who wins elections, where capital flows, which countries gain leverage and which lose it. But most coverage is written for people who already understand it, buried in jargon that functions more as a gatekeeping mechanism than anything else.
+    I started Volta out of frustration. Economics and geopolitics shape everything; who wins elections, where capital flows, which countries gain leverage and which lose it. But most coverage is written for people who already understand it, buried in jargon that functions more as a gatekeeping mechanism than anything else.
   </p>
   <p style={{ marginBottom: "1.5rem" }}>
     I am about to graduate with a joint honours degree in Economics and Politics. The further into both I got, the more obvious it became that separating them is a fiction. Sanctions are economic tools with political goals. Elections move currency markets. Trade policy is foreign policy. Crucially, none of it makes sense in isolation.

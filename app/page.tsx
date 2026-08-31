@@ -73,7 +73,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
 {/* Nav */}
       <nav style={{ background: "#fff", borderBottom: "1px solid #e8e4f0", padding: "0 2rem", height: "52px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ fontFamily: "Georgia, serif", fontSize: "22px", letterSpacing: "-0.5px", fontWeight: 500 }}>
-          Fault<span style={{ color: "#6b4fa0" }}>Lines</span>
+          Volta<span style={{ color: "#6b4fa0" }}>Weekly</span>
         </div>
         <div className="desktop-nav" style={{ display: "flex", gap: "1.5rem" }}>
           {[

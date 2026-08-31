@@ -15,13 +15,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   return {
-    title: `${post.title} | FaultLines`,
+    title: `${post.title} | Volta`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
       description: post.excerpt,
       url: `https://faultlines-jade.vercel.app/articles/${slug}`,
-      siteName: "FaultLines",
+      siteName: "Volta",
       locale: "en_GB",
       type: "article",
       publishedTime: post.date,
@@ -41,7 +41,7 @@ export default async function ArticlePage({ params }: Props) {
   return (
     <main style={{ maxWidth: "680px", margin: "0 auto", padding: "3rem 2rem", fontFamily: "sans-serif", color: "#1a1a1a" }}>
       <a href="/" style={{ fontSize: "12px", color: "#6b4fa0", textDecoration: "none", display: "inline-block", marginBottom: "2rem" }}>
-        ← Back to FaultLines
+        ← Back to Volta
       </a>
       <div style={{ marginBottom: "0.75rem" }}>
         <span style={{ background: "#e3f2ea", color: "#1e5c38", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>

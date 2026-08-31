@@ -6,7 +6,7 @@ export default async function AllArticlesPage() {
   return (
     <main style={{ maxWidth: "860px", margin: "0 auto", padding: "3rem 2rem", fontFamily: "sans-serif", color: "#1a1a1a" }}>
       <a href="/" style={{ fontSize: "12px", color: "#6b4fa0", textDecoration: "none", display: "inline-block", marginBottom: "2rem" }}>
-        ← Back to FaultLines
+        ← Back to Volta
       </a>
       <h1 style={{ fontFamily: "Georgia, serif", fontSize: "32px", fontWeight: 500, marginBottom: "2.5rem", letterSpacing: "-0.5px" }}>
         All articles

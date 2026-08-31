@@ -14,7 +14,7 @@ export default async function CategoryPage({ params }: Props) {
   return (
     <main style={{ maxWidth: "860px", margin: "0 auto", padding: "3rem 2rem", fontFamily: "sans-serif", color: "#1a1a1a" }}>
       <a href="/" style={{ fontSize: "12px", color: "#6b4fa0", textDecoration: "none", display: "inline-block", marginBottom: "2rem" }}>
-        ← Back to FaultLines
+        ← Back to Volta
       </a>
       <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.12em", color: "#6b4fa0", fontWeight: 600, marginBottom: "0.5rem" }}>
         Category
