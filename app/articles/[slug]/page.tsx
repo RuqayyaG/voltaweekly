@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      url: `https://faultlines-jade.vercel.app/articles/${slug}`,
+      url: `https://voltaweekly.com/articles/${slug}`,
       siteName: "Volta",
       locale: "en_GB",
       type: "article",

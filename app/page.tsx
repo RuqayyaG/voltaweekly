@@ -116,60 +116,60 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
       )}
 
 {/* Hero */}
-      <div style={{ borderBottom: "1px solid #ede9f5", padding: "2.5rem 2rem 2rem", background: "#fff" }}>
+      <div style={{ borderBottom: "1px solid #ede9f5", padding: "2.5rem 1.5rem 2rem", background: "#fff" }}>
         <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.12em", color: "#6b4fa0", fontWeight: 600, marginBottom: "1rem" }}>
           Featured analysis
         </div>
-        <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 340px", gap: "3rem", alignItems: "start" }}>          <div>
-            <h1 style={{ fontFamily: "Georgia, serif", fontSize: "36px", fontWeight: 500, lineHeight: 1.15, color: "#1a1a1a", marginBottom: "1rem", letterSpacing: "-0.5px" }}>
-              Oil is at $94 and the market still{" "}
-              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>thinks this ends cleanly.</em>
+        <div className="hero-layout">
+          <div>
+            <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px, 5vw, 36px)", fontWeight: 500, lineHeight: 1.15, color: "#1a1a1a", marginBottom: "1rem", letterSpacing: "-0.5px" }}>
+              The Fed is about to hike into a war it didn't start{" "}
+              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>and can't control.</em>
             </h1>
             <p style={{ fontSize: "15px", color: "#444", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-              Brent crude pushed back toward $94 this week, reversing a dip that came after US officials talked up a deal with Tehran. There is no deal. Shipping through Hormuz is running at half its pre-war volume and Bessent is threatening sanctions that have never been seen before. The consensus is still that this resolves orderly. It might not.
+              The September FOMC meeting is live. Markets are split roughly 50/50 on whether rates go up. The inflation keeping the Fed hawkish isn't coming from domestic demand. It's coming from a war in the Persian Gulf, and the Fed has no tools to fix that.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "#888", marginBottom: "1.25rem", flexWrap: "wrap" }}>
-              <span style={{ background: "#f0edf8", color: "#6b4fa0", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
-              <span>August 30, 2026</span>
-              <span>3 min read</span>
+              <span style={{ background: "#e3f2ea", color: "#1e5c38", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Macro</span>
+              <span style={{ background: "#e3f2ea", color: "#1e5c38", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
+              <span>September 7, 2026</span>
+              <span>5 min read</span>
             </div>
-            <a href="/articles/hormuz-oil-market-august-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
+            <a href="/articles/fed-september-hike-iran-war-september-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
               Read analysis →
             </a>
           </div>
 
-          {/* Sparklines */}
-                    <div className="market-pulse">
+          <div>
             <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888", marginBottom: "0.75rem", fontWeight: 500 }}>Market pulse</div>
             {[
-              { name: "US 10Y yield", val: "4.38%", chg: "+0.06", up: true },
-              { name: "DXY (dollar index)", val: "101.2", chg: "-0.84", up: false },
-              { name: "Gold ($/oz)", val: "$3,312", chg: "+$18", up: true },
+              { name: "US 10Y yield", val: "4.78%", chg: "+0.12", up: true },
+              { name: "Brent crude", val: "$93.40", chg: "+2.71%", up: true },
+              { name: "Gold ($/oz)", val: "$4,426", chg: "+1.4%", up: true },
             ].map((item) => (
-              <div key={item.name} style={{ background: "#f7f5fc", border: "1px solid #e0ddf0", borderRadius: "6px", padding: "0.875rem 1rem", marginBottom: "8px" }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "6px" }}>
-                  <span style={{ fontSize: "12px", fontWeight: 500 }}>{item.name}</span>
-                  <span>
-                    <span style={{ fontSize: "13px", fontWeight: 500 }}>{item.val}</span>
-                    <span style={{ fontSize: "11px", marginLeft: "4px", color: item.up ? "#2d7a4f" : "#a33030" }}>{item.chg}</span>
-                  </span>
+              <div key={item.name} style={{ background: "#f7f5fc", border: "1px solid #e0ddf0", borderRadius: "6px", padding: "0.75rem 1rem", marginBottom: "8px" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4px" }}>
+                  <span style={{ fontSize: "12px", fontWeight: 500, color: "#1a1a1a" }}>{item.name}</span>
+                  <span style={{ fontSize: "11px", color: item.up ? "#2d7a4f" : "#a33030" }}>{item.chg}</span>
                 </div>
-                <div style={{ height: "40px", background: item.up ? "rgba(45,122,79,0.07)" : "rgba(163,48,48,0.07)", borderRadius: "3px" }} />
+                <div style={{ fontSize: "16px", fontWeight: 500, color: "#1a1a1a" }}>{item.val}</div>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      
       {/* Risk dashboard */}
       <div style={{ background: "#f4f2fa", borderTop: "1px solid #e0ddf0", borderBottom: "1px solid #e0ddf0", padding: "1.5rem 2rem" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1rem" }}>
           <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.1em", color: "#888", fontWeight: 500 }}>Geopolitical risk dashboard</span>
         </div>
         <div className="dash-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "10px" }}>          {[
-{ label: "Global risk index", val: 81, sub: "High · Iran sanctions escalating", color: "#a33030" },
-{ label: "US–China tension", val: 79, sub: "High · trade grinding, no acute flashpoint", color: "#c0601a" },
-{ label: "Middle East volatility", val: 88, sub: "Critical · Hormuz at half capacity", color: "#a33030" },
-{ label: "EUR political risk", val: 42, sub: "Moderate · energy price pressure rising", color: "#b09820" },          ].map((item) => (
+{ label: "Global risk index", val: 87, sub: "Critical · attacks resumed Sep 1", color: "#a33030" },
+{ label: "US–China tension", val: 76, sub: "High · trade grinding, no new flashpoint", color: "#c0601a" },
+{ label: "Middle East volatility", val: 94, sub: "Critical · two tankers struck Sep 1", color: "#a33030" },
+{ label: "EUR political risk", val: 48, sub: "Elevated · energy inflation feeding through", color: "#b09820" },          ].map((item) => (
             <div key={item.label} style={{ background: "#fff", border: "1px solid #e8e4f0", borderRadius: "6px", padding: "1rem" }}>
               <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.07em", color: "#888", marginBottom: "6px", fontWeight: 500 }}>{item.label}</div>
               <div style={{ fontSize: "24px", fontWeight: 500, lineHeight: 1, marginBottom: "4px", color: item.color }}>
@@ -192,21 +192,21 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         </div>
         <div className="articles-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "2rem" }}>          {[
   {
-    tag: "Markets", tagBg: "#f0edf8", tagColor: "#6b4fa0",
-    slug: "/articles/hormuz-oil-market-august-2026",
-    title: "Oil is at $94 and the market still thinks this ends cleanly",
-    excerpt: "Brent crude hit its highest level since late July this week. Shipping through Hormuz is running at less than half its pre-war volume. And somehow the consensus is still that this resolves in an orderly way.",
-    date: "August 30, 2026", read: "3 min read",
+     tag: "Macro", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+    slug: "/articles/fed-september-hike-iran-war-september-2026",
+    title: "The Fed is about to hike into a war it didn't start and can't control",
+    excerpt: "The September FOMC meeting is live. Markets are split roughly 50/50 on whether rates go up. What makes this unusual is that the inflation keeping the Fed hawkish is coming from a war in the Persian Gulf, not domestic demand.",
+    date: "September 6, 2026", read: "2 min read",
   },
   {
-    tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
-    slug: "/articles/us-tariffs-china-asean-august-2026",
-    title: "Trump's tariffs were supposed to hurt China. They've made it dominant in ASEAN instead.",
-    excerpt: "New data shows Chinese firms have expanded market share in over 40% of major goods categories globally. In Southeast Asia, two-way trade with China just hit $772 billion. The tariff strategy has a problem.",
-    date: "August 30, 2026", read: "2 min read",
+    tag: "Markets", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+    slug: "/articles/hormuz-iea-largest-supply-disruption-september-2026",
+    title: "The IEA called it the largest supply disruption in history. Six months in, markets still haven't fully priced it.",
+    excerpt: "The IEA has described the Hormuz crisis as the greatest energy security challenge in history. Brent is between $90 and $97. Gold is at $4,400. And equity markets are still close to record highs. Something doesn't add up.",
+    date: "September 6, 2026", read: "2 min read",
   },
   {
-    tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
+    tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
     slug: "/articles/trump-iran-sanctions-economic-warfare-august-2026",
     title: "Bessent says the Iran sanctions will be unlike anything seen before. Tehran has heard that before.",
     excerpt: "The US has been sanctioning Iran since 1979. A Congressional Research Service report describes them as the most extensive sanctions the US maintains on any country. Iran is still there.",
@@ -258,21 +258,23 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
 </form>
 </div>      </div>
 
-      <style>{`
+     <style>{`
   @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
+  .hero-layout { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: start; }
+  .articles-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+  .dash-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .pulse-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .hamburger { display: none; }
   @media (max-width: 768px) {
-    .hero-grid { grid-template-columns: 1fr !important; }
+    .hero-layout { grid-template-columns: 1fr !important; }
     .dash-grid { grid-template-columns: 1fr 1fr !important; }
     .articles-grid { grid-template-columns: 1fr !important; }
-    .nl-form { flex-direction: column !important; width: 100% !important; }
-    .nl-form input { width: 100% !important; }
-    .nl-form button { width: 100% !important; }
-    .newsletter { flex-direction: column !important; }
-     .desktop-nav { display: none !important; }
-     .hamburger { display: flex !important; }
+    .pulse-grid { grid-template-columns: 1fr !important; }
+    .desktop-nav { display: none !important; }
+    .hamburger { display: flex !important; }
   }
 `}</style>
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Volta",
     description: "Geopolitics and markets analysis. How political movements affect markets and vice versa.",
-    url: "https://faultlines-jade.vercel.app",
+    url: "https://voltaweekly.com",
     siteName: "Volta",
     locale: "en_GB",
     type: "website",
