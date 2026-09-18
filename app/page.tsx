@@ -116,6 +116,7 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
       )}
 
 {/* Hero */}
+{/* Hero */}
       <div style={{ borderBottom: "1px solid #ede9f5", padding: "2.5rem 1.5rem 2rem", background: "#fff" }}>
         <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.12em", color: "#6b4fa0", fontWeight: 600, marginBottom: "1rem" }}>
           Featured analysis
@@ -123,19 +124,19 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         <div className="hero-layout">
           <div>
             <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px, 5vw, 36px)", fontWeight: 500, lineHeight: 1.15, color: "#1a1a1a", marginBottom: "1rem", letterSpacing: "-0.5px" }}>
-              The Fed is about to hike into a war it didn't start{" "}
-              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>and can't control.</em>
+              Saudi Arabia's bypass route just got hit.{" "}
+              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>There is no backup to the backup.</em>
             </h1>
             <p style={{ fontSize: "15px", color: "#444", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-              The September FOMC meeting is live. Markets are split roughly 50/50 on whether rates go up. The inflation keeping the Fed hawkish isn't coming from domestic demand. It's coming from a war in the Persian Gulf, and the Fed has no tools to fix that.
+              The East-West pipeline was the global oil market's last contingency plan while Hormuz stayed closed. On September 10, drones launched from Iraq shut it down. Brent is above $107. There is no alternative export route left.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "#888", marginBottom: "1.25rem", flexWrap: "wrap" }}>
-              <span style={{ background: "#e3f2ea", color: "#1e5c38", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Macro</span>
-              <span style={{ background: "#e3f2ea", color: "#1e5c38", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
-              <span>September 7, 2026</span>
-              <span>5 min read</span>
+              <span style={{ background: "#ede9f5", color: "#5a3d8a", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Geopolitics</span>
+              <span style={{ background: "#f0edf8", color: "#6b4fa0", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
+              <span>September 13, 2026</span>
+              <span>2 min read</span>
             </div>
-            <a href="/articles/fed-september-hike-iran-war-september-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
+            <a href="/articles/saudi-pipeline-attack-september-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
               Read analysis →
             </a>
           </div>
@@ -143,9 +144,9 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           <div>
             <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888", marginBottom: "0.75rem", fontWeight: 500 }}>Market pulse</div>
             {[
-              { name: "US 10Y yield", val: "4.78%", chg: "+0.12", up: true },
-              { name: "Brent crude", val: "$93.40", chg: "+2.71%", up: true },
-              { name: "Gold ($/oz)", val: "$4,426", chg: "+1.4%", up: true },
+              { name: "Brent crude", val: "$107.20", chg: "+2.71%", up: true },
+              { name: "US 10Y yield", val: "4.98%", chg: "+0.20", up: true },
+              { name: "Gold ($/oz)", val: "$4,351", chg: "+1.4%", up: true },
             ].map((item) => (
               <div key={item.name} style={{ background: "#f7f5fc", border: "1px solid #e0ddf0", borderRadius: "6px", padding: "0.75rem 1rem", marginBottom: "8px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4px" }}>
@@ -161,15 +162,19 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
 
       
       {/* Risk dashboard */}
-      <div style={{ background: "#f4f2fa", borderTop: "1px solid #e0ddf0", borderBottom: "1px solid #e0ddf0", padding: "1.5rem 2rem" }}>
+{/* Risk dashboard */}
+      <div style={{ background: "#f4f2fa", borderTop: "1px solid #e0ddf0", borderBottom: "1px solid #e0ddf0", padding: "1.5rem" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1rem" }}>
           <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.1em", color: "#888", fontWeight: 500 }}>Geopolitical risk dashboard</span>
+          <span style={{ fontSize: "11px", color: "#aaa", cursor: "pointer" }}>Full dashboard →</span>
         </div>
-        <div className="dash-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: "10px" }}>          {[
-{ label: "Global risk index", val: 87, sub: "Critical · attacks resumed Sep 1", color: "#a33030" },
-{ label: "US–China tension", val: 76, sub: "High · trade grinding, no new flashpoint", color: "#c0601a" },
-{ label: "Middle East volatility", val: 94, sub: "Critical · two tankers struck Sep 1", color: "#a33030" },
-{ label: "EUR political risk", val: 48, sub: "Elevated · energy inflation feeding through", color: "#b09820" },          ].map((item) => (
+        <div className="dash-grid">
+          {[
+            { label: "Global risk index", val: 91, sub: "Critical · pipeline shut, Fed hike imminent", color: "#a33030" },
+            { label: "US–China tension", val: 76, sub: "High · trade grinding, no new flashpoint", color: "#c0601a" },
+            { label: "Middle East volatility", val: 98, sub: "Critical · Hormuz closed, pipeline shut", color: "#a33030" },
+            { label: "EUR political risk", val: 52, sub: "Elevated · energy inflation accelerating", color: "#b09820" },
+          ].map((item) => (
             <div key={item.label} style={{ background: "#fff", border: "1px solid #e8e4f0", borderRadius: "6px", padding: "1rem" }}>
               <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.07em", color: "#888", marginBottom: "6px", fontWeight: 500 }}>{item.label}</div>
               <div style={{ fontSize: "24px", fontWeight: 500, lineHeight: 1, marginBottom: "4px", color: item.color }}>
@@ -191,26 +196,26 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           <a href="/articles" style={{ fontSize: "11px", color: "#aaa", cursor: "pointer", textDecoration: "none" }}>All articles →</a>
         </div>
         <div className="articles-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "2rem" }}>          {[
+ {
+    tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+    slug: "/articles/saudi-pipeline-attack-september-2026",
+    title: "Saudi Arabia's bypass route just got hit. There is no backup to the backup.",
+    excerpt: "The East-West pipeline was Saudi Arabia's main workaround while Hormuz stayed closed. On September 10, drones launched from Iraq hit its pumping stations and shut it down. Brent is now above $107. The oil market has lost its last contingency plan.",
+    date: "September 13, 2026", read: "2 min read",
+  },
   {
-     tag: "Macro", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+    tag: "Macro", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+    slug: "/articles/fed-hikes-september-13-2026",
+    title: "The Fed just hiked into the worst oil shock in history. Here is why that was probably right.",
+    excerpt: "The Federal Reserve raised rates to 3.75 to 4.00% today. Brent is above $107. The labour market is softening. Hiking into a supply shock is normally bad monetary policy. This time the calculus is different.",
+    date: "September 13, 2026", read: "2 min read",
+  },
+  {
+    tag: "Macro", tagBg: "#e3f2ea", tagColor: "#1e5c38",
     slug: "/articles/fed-september-hike-iran-war-september-2026",
     title: "The Fed is about to hike into a war it didn't start and can't control",
-    excerpt: "The September FOMC meeting is live. Markets are split roughly 50/50 on whether rates go up. What makes this unusual is that the inflation keeping the Fed hawkish is coming from a war in the Persian Gulf, not domestic demand.",
+    excerpt: "The September FOMC meeting is live. Markets are split roughly 50/50 on whether rates go up. The inflation keeping the Fed hawkish isn't coming from domestic demand. It's coming from a war in the Persian Gulf.",
     date: "September 6, 2026", read: "2 min read",
-  },
-  {
-    tag: "Markets", tagBg: "#e3f2ea", tagColor: "#1e5c38",
-    slug: "/articles/hormuz-iea-largest-supply-disruption-september-2026",
-    title: "The IEA called it the largest supply disruption in history. Six months in, markets still haven't fully priced it.",
-    excerpt: "The IEA has described the Hormuz crisis as the greatest energy security challenge in history. Brent is between $90 and $97. Gold is at $4,400. And equity markets are still close to record highs. Something doesn't add up.",
-    date: "September 6, 2026", read: "2 min read",
-  },
-  {
-    tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
-    slug: "/articles/trump-iran-sanctions-economic-warfare-august-2026",
-    title: "Bessent says the Iran sanctions will be unlike anything seen before. Tehran has heard that before.",
-    excerpt: "The US has been sanctioning Iran since 1979. A Congressional Research Service report describes them as the most extensive sanctions the US maintains on any country. Iran is still there.",
-    date: "August 30, 2026", read: "2 min read",
   },
 ].map((a) => (
   <a key={a.title} href={a.slug} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer", textDecoration: "none", display: "block" }}>
