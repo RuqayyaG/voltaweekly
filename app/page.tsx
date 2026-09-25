@@ -81,7 +81,6 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
             { label: "Macro", href: "/category/macro" },
             { label: "Markets", href: "/category/markets" },
             { label: "Policy", href: "/category/policy" },
-            { label: "Data", href: "/category/data" },
             { label: "About", href: "/about" },
           ].map((item) => (
             <a key={item.label} href={item.href} style={{ fontSize: "11px", color: "#666", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.1em", cursor: "pointer" }} onMouseEnter={e => (e.currentTarget.style.color = "#6b4fa0")} onMouseLeave={e => (e.currentTarget.style.color = "#666")}>
@@ -105,7 +104,6 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
             { label: "Macro", href: "/category/macro" },
             { label: "Markets", href: "/category/markets" },
             { label: "Policy", href: "/category/policy" },
-            { label: "Data", href: "/category/data" },
             { label: "About", href: "/about" },
           ].map((item) => (
             <a key={item.label} href={item.href} style={{ fontSize: "14px", color: "#1a1a1a", textDecoration: "none", textTransform: "uppercase", letterSpacing: "0.1em" }}>
@@ -116,7 +114,6 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
       )}
 
 {/* Hero */}
-{/* Hero */}
       <div style={{ borderBottom: "1px solid #ede9f5", padding: "2.5rem 1.5rem 2rem", background: "#fff" }}>
         <div style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.12em", color: "#6b4fa0", fontWeight: 600, marginBottom: "1rem" }}>
           Featured analysis
@@ -124,19 +121,18 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         <div className="hero-layout">
           <div>
             <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px, 5vw, 36px)", fontWeight: 500, lineHeight: 1.15, color: "#1a1a1a", marginBottom: "1rem", letterSpacing: "-0.5px" }}>
-              Saudi Arabia's bypass route just got hit.{" "}
-              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>There is no backup to the backup.</em>
+              Trump and Xi just extended their trade truce.{" "}
+              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>Neither side got what it wanted.</em>
             </h1>
             <p style={{ fontSize: "15px", color: "#444", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-              The East-West pipeline was the global oil market's last contingency plan while Hormuz stayed closed. On September 10, drones launched from Iraq shut it down. Brent is above $107. There is no alternative export route left.
+              US and Chinese officials met in New York this weekend ahead of a Washington summit. The Busan trade truce is being extended by two months. Both sides needed more time. Neither is ready to call it a deal.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "#888", marginBottom: "1.25rem", flexWrap: "wrap" }}>
               <span style={{ background: "#ede9f5", color: "#5a3d8a", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Geopolitics</span>
-              <span style={{ background: "#f0edf8", color: "#6b4fa0", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
-              <span>September 13, 2026</span>
+              <span>September 20, 2026</span>
               <span>2 min read</span>
             </div>
-            <a href="/articles/saudi-pipeline-attack-september-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
+            <a href="/articles/trump-xi-summit-trade-truce-september-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
               Read analysis →
             </a>
           </div>
@@ -144,10 +140,9 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           <div>
             <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888", marginBottom: "0.75rem", fontWeight: 500 }}>Market pulse</div>
             {[
-              { name: "Brent crude", val: "$107.20", chg: "+2.71%", up: true },
-              { name: "US 10Y yield", val: "4.98%", chg: "+0.20", up: true },
-              { name: "Gold ($/oz)", val: "$4,351", chg: "+1.4%", up: true },
-            ].map((item) => (
+              { name: "Brent crude", val: "$116.15", chg: "+2.9%", up: true },
+              { name: "US 10Y yield", val: "5.00%", chg: "+0.02", up: true },
+              { name: "Gold ($/oz)", val: "$4,290", chg: "-1.2%", up: false },            ].map((item) => (
               <div key={item.name} style={{ background: "#f7f5fc", border: "1px solid #e0ddf0", borderRadius: "6px", padding: "0.75rem 1rem", marginBottom: "8px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4px" }}>
                   <span style={{ fontSize: "12px", fontWeight: 500, color: "#1a1a1a" }}>{item.name}</span>
@@ -170,11 +165,10 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         </div>
         <div className="dash-grid">
           {[
-            { label: "Global risk index", val: 91, sub: "Critical · pipeline shut, Fed hike imminent", color: "#a33030" },
-            { label: "US–China tension", val: 76, sub: "High · trade grinding, no new flashpoint", color: "#c0601a" },
+            { label: "Global risk index", val: 93, sub: "Critical · Brent above $116, pipeline still shut", color: "#a33030" },
+            { label: "US–China tension", val: 72, sub: "Easing · trade truce extended to Jan 10", color: "#c0601a" },
             { label: "Middle East volatility", val: 98, sub: "Critical · Hormuz closed, pipeline shut", color: "#a33030" },
-            { label: "EUR political risk", val: 52, sub: "Elevated · energy inflation accelerating", color: "#b09820" },
-          ].map((item) => (
+            { label: "EUR political risk", val: 55, sub: "Elevated · ECB hiked, gilt yields near 6%", color: "#b09820" },          ].map((item) => (
             <div key={item.label} style={{ background: "#fff", border: "1px solid #e8e4f0", borderRadius: "6px", padding: "1rem" }}>
               <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.07em", color: "#888", marginBottom: "6px", fontWeight: 500 }}>{item.label}</div>
               <div style={{ fontSize: "24px", fontWeight: 500, lineHeight: 1, marginBottom: "4px", color: item.color }}>
@@ -198,24 +192,24 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         <div className="articles-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "2rem" }}>          {[
  {
     tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+    slug: "/articles/trump-xi-summit-trade-truce-september-2026",
+    title: "Trump and Xi just extended their trade truce. Neither side got what it wanted.",
+    excerpt: "US and Chinese officials met in New York this weekend ahead of a Washington summit. The Busan trade truce is being extended by two months. Both sides needed more time. Neither is ready to call it a deal.",
+    date: "September 20, 2026", read: "2 min read",
+  },
+  {
+    tag: "Macro", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+    slug: "/articles/bank-of-england-hold-gilt-yields-september-2026",
+    title: "The Bank of England held rates again. The gilt market is starting to disagree.",
+    excerpt: "The MPC voted 6-3 to hold at 3.75% on September 17. Three members wanted a hike. UK CPI hit 3.1% in August. 30-year gilt yields are approaching 6%. The Bank is holding but the bond market is doing its own tightening.",
+    date: "September 20, 2026", read: "2 min read",
+  },
+  {
+    tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
     slug: "/articles/saudi-pipeline-attack-september-2026",
     title: "Saudi Arabia's bypass route just got hit. There is no backup to the backup.",
     excerpt: "The East-West pipeline was Saudi Arabia's main workaround while Hormuz stayed closed. On September 10, drones launched from Iraq hit its pumping stations and shut it down. Brent is now above $107. The oil market has lost its last contingency plan.",
     date: "September 13, 2026", read: "2 min read",
-  },
-  {
-    tag: "Macro", tagBg: "#e3f2ea", tagColor: "#1e5c38",
-    slug: "/articles/fed-hikes-september-13-2026",
-    title: "The Fed just hiked into the worst oil shock in history. Here is why that was probably right.",
-    excerpt: "The Federal Reserve raised rates to 3.75 to 4.00% today. Brent is above $107. The labour market is softening. Hiking into a supply shock is normally bad monetary policy. This time the calculus is different.",
-    date: "September 13, 2026", read: "2 min read",
-  },
-  {
-    tag: "Macro", tagBg: "#e3f2ea", tagColor: "#1e5c38",
-    slug: "/articles/fed-september-hike-iran-war-september-2026",
-    title: "The Fed is about to hike into a war it didn't start and can't control",
-    excerpt: "The September FOMC meeting is live. Markets are split roughly 50/50 on whether rates go up. The inflation keeping the Fed hawkish isn't coming from domestic demand. It's coming from a war in the Persian Gulf.",
-    date: "September 6, 2026", read: "2 min read",
   },
 ].map((a) => (
   <a key={a.title} href={a.slug} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer", textDecoration: "none", display: "block" }}>
