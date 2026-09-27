@@ -121,18 +121,18 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         <div className="hero-layout">
           <div>
             <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px, 5vw, 36px)", fontWeight: 500, lineHeight: 1.15, color: "#1a1a1a", marginBottom: "1rem", letterSpacing: "-0.5px" }}>
-              Trump and Xi just extended their trade truce.{" "}
-              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>Neither side got what it wanted.</em>
+              Iran offered to reopen Hormuz in seven days.{" "}
+              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>Trump said no.</em>
             </h1>
             <p style={{ fontSize: "15px", color: "#444", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-              US and Chinese officials met in New York this weekend ahead of a Washington summit. The Busan trade truce is being extended by two months. Both sides needed more time. Neither is ready to call it a deal.
+              Iran presented a seven-day roadmap to reopen the Strait of Hormuz at the UN General Assembly on Friday. The plan was transmitted through Qatari mediators. Trump rejected it on Saturday. The Wall Street Journal reported he has told aides to expect resumed bombing after the midterms.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "#888", marginBottom: "1.25rem", flexWrap: "wrap" }}>
               <span style={{ background: "#ede9f5", color: "#5a3d8a", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Geopolitics</span>
-              <span>September 20, 2026</span>
-              <span>2 min read</span>
+              <span>September 27, 2026</span>
+              <span>3 min read</span>
             </div>
-            <a href="/articles/trump-xi-summit-trade-truce-september-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
+            <a href="/articles/trump-rejects-iran-hormuz-proposal-september-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
               Read analysis →
             </a>
           </div>
@@ -140,9 +140,10 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           <div>
             <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888", marginBottom: "0.75rem", fontWeight: 500 }}>Market pulse</div>
             {[
-              { name: "Brent crude", val: "$116.15", chg: "+2.9%", up: true },
-              { name: "US 10Y yield", val: "5.00%", chg: "+0.02", up: true },
-              { name: "Gold ($/oz)", val: "$4,290", chg: "-1.2%", up: false },            ].map((item) => (
+              { name: "Brent crude", val: "$104.32", chg: "-2.1%", up: false },
+              { name: "US 10Y yield", val: "5.17%", chg: "+0.51%", up: true },
+              { name: "Gold ($/oz)", val: "$4,284", chg: "-0.8%", up: false },
+            ].map((item) => (
               <div key={item.name} style={{ background: "#f7f5fc", border: "1px solid #e0ddf0", borderRadius: "6px", padding: "0.75rem 1rem", marginBottom: "8px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4px" }}>
                   <span style={{ fontSize: "12px", fontWeight: 500, color: "#1a1a1a" }}>{item.name}</span>
@@ -156,7 +157,6 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
       </div>
 
       
-      {/* Risk dashboard */}
 {/* Risk dashboard */}
       <div style={{ background: "#f4f2fa", borderTop: "1px solid #e0ddf0", borderBottom: "1px solid #e0ddf0", padding: "1.5rem" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "1rem" }}>
@@ -165,10 +165,11 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         </div>
         <div className="dash-grid">
           {[
-            { label: "Global risk index", val: 93, sub: "Critical · Brent above $116, pipeline still shut", color: "#a33030" },
-            { label: "US–China tension", val: 72, sub: "Easing · trade truce extended to Jan 10", color: "#c0601a" },
-            { label: "Middle East volatility", val: 98, sub: "Critical · Hormuz closed, pipeline shut", color: "#a33030" },
-            { label: "EUR political risk", val: 55, sub: "Elevated · ECB hiked, gilt yields near 6%", color: "#b09820" },          ].map((item) => (
+            { label: "Global risk index", val: 94, sub: "Critical · Hormuz deal rejected, bombing likely post-midterms", color: "#a33030" },
+            { label: "US–China tension", val: 70, sub: "Elevated · truce extended, summit inconclusive", color: "#c0601a" },
+            { label: "Middle East volatility", val: 98, sub: "Critical · Hormuz closed, pipeline shut, no deal", color: "#a33030" },
+            { label: "EUR political risk", val: 58, sub: "Elevated · gilt yields near 6%, ECB hiking", color: "#b09820" },
+          ].map((item) => (
             <div key={item.label} style={{ background: "#fff", border: "1px solid #e8e4f0", borderRadius: "6px", padding: "1rem" }}>
               <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.07em", color: "#888", marginBottom: "6px", fontWeight: 500 }}>{item.label}</div>
               <div style={{ fontSize: "24px", fontWeight: 500, lineHeight: 1, marginBottom: "4px", color: item.color }}>
@@ -192,24 +193,24 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         <div className="articles-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "2rem" }}>          {[
  {
     tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+    slug: "/articles/trump-rejects-iran-hormuz-proposal-september-2026",
+    title: "Iran offered to reopen Hormuz in seven days. Trump said no.",
+    excerpt: "Iran presented a seven-day roadmap to reopen the Strait of Hormuz at the UN General Assembly on Friday. Trump rejected it on Saturday. The Wall Street Journal reported he has told aides to expect resumed bombing after the midterms.",
+    date: "September 27, 2026", read: "3 min read",
+  },
+  {
+    tag: "Markets", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+    slug: "/articles/bond-market-rout-yields-five-percent-september-2026",
+    title: "The bond market is doing something it hasn't done in two decades. Equities haven't caught up.",
+    excerpt: "The US 10-year yield hit 5.23% this week, its highest level since 2007. The 30-year hit levels not seen since 2004. The S&P 500 is still near its highs. That divergence is the most important thing in markets right now.",
+    date: "September 27, 2026", read: "2 min read",
+  },
+  {
+    tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
     slug: "/articles/trump-xi-summit-trade-truce-september-2026",
     title: "Trump and Xi just extended their trade truce. Neither side got what it wanted.",
     excerpt: "US and Chinese officials met in New York this weekend ahead of a Washington summit. The Busan trade truce is being extended by two months. Both sides needed more time. Neither is ready to call it a deal.",
     date: "September 20, 2026", read: "2 min read",
-  },
-  {
-    tag: "Macro", tagBg: "#e3f2ea", tagColor: "#1e5c38",
-    slug: "/articles/bank-of-england-hold-gilt-yields-september-2026",
-    title: "The Bank of England held rates again. The gilt market is starting to disagree.",
-    excerpt: "The MPC voted 6-3 to hold at 3.75% on September 17. Three members wanted a hike. UK CPI hit 3.1% in August. 30-year gilt yields are approaching 6%. The Bank is holding but the bond market is doing its own tightening.",
-    date: "September 20, 2026", read: "2 min read",
-  },
-  {
-    tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
-    slug: "/articles/saudi-pipeline-attack-september-2026",
-    title: "Saudi Arabia's bypass route just got hit. There is no backup to the backup.",
-    excerpt: "The East-West pipeline was Saudi Arabia's main workaround while Hormuz stayed closed. On September 10, drones launched from Iraq hit its pumping stations and shut it down. Brent is now above $107. The oil market has lost its last contingency plan.",
-    date: "September 13, 2026", read: "2 min read",
   },
 ].map((a) => (
   <a key={a.title} href={a.slug} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer", textDecoration: "none", display: "block" }}>
