@@ -121,18 +121,18 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         <div className="hero-layout">
           <div>
             <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px, 5vw, 36px)", fontWeight: 500, lineHeight: 1.15, color: "#1a1a1a", marginBottom: "1rem", letterSpacing: "-0.5px" }}>
-              Iran offered to reopen Hormuz in seven days.{" "}
-              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>Trump said no.</em>
+              More oil is getting through Hormuz.{" "}
+              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>Prices are still above $100. Here is why.</em>
             </h1>
             <p style={{ fontSize: "15px", color: "#444", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-              Iran presented a seven-day roadmap to reopen the Strait of Hormuz at the UN General Assembly on Friday. The plan was transmitted through Qatari mediators. Trump rejected it on Saturday. The Wall Street Journal reported he has told aides to expect resumed bombing after the midterms.
+              Crude flows through Hormuz have recovered to around 14 million barrels per day, close to pre-war levels. Brent is still trading above $100. The volume came back. The cost didn't. Understanding why tells you more about where energy markets are heading than the headline flow numbers do.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "#888", marginBottom: "1.25rem", flexWrap: "wrap" }}>
-              <span style={{ background: "#ede9f5", color: "#5a3d8a", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Geopolitics</span>
-              <span>September 27, 2026</span>
-              <span>3 min read</span>
+              <span style={{ background: "#f0edf8", color: "#6b4fa0", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
+              <span>October 4, 2026</span>
+              <span>2 min read</span>
             </div>
-            <a href="/articles/trump-rejects-iran-hormuz-proposal-september-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
+            <a href="/articles/hormuz-oil-flows-recovering-prices-still-high-october-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
               Read analysis →
             </a>
           </div>
@@ -140,9 +140,9 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           <div>
             <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888", marginBottom: "0.75rem", fontWeight: 500 }}>Market pulse</div>
             {[
-              { name: "Brent crude", val: "$104.32", chg: "-2.1%", up: false },
-              { name: "US 10Y yield", val: "5.17%", chg: "+0.51%", up: true },
-              { name: "Gold ($/oz)", val: "$4,284", chg: "-0.8%", up: false },
+              { name: "Brent crude", val: "$102.59", chg: "-2.1%", up: false },
+              { name: "US 10Y yield", val: "5.28%", chg: "+0.11%", up: true },
+              { name: "Ibovespa", val: "192,114", chg: "+2.63%", up: true },
             ].map((item) => (
               <div key={item.name} style={{ background: "#f7f5fc", border: "1px solid #e0ddf0", borderRadius: "6px", padding: "0.75rem 1rem", marginBottom: "8px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4px" }}>
@@ -165,9 +165,9 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         </div>
         <div className="dash-grid">
           {[
-            { label: "Global risk index", val: 94, sub: "Critical · Hormuz deal rejected, bombing likely post-midterms", color: "#a33030" },
-            { label: "US–China tension", val: 70, sub: "Elevated · truce extended, summit inconclusive", color: "#c0601a" },
-            { label: "Middle East volatility", val: 98, sub: "Critical · Hormuz closed, pipeline shut, no deal", color: "#a33030" },
+            { label: "Global risk index", val: 92, sub: "Critical · Hormuz tanker strikes continue", color: "#a33030" },
+            { label: "US–China tension", val: 70, sub: "Elevated · truce extended to Jan 10", color: "#c0601a" },
+            { label: "Middle East volatility", val: 95, sub: "Critical · flows recovering, attacks ongoing", color: "#a33030" },
             { label: "EUR political risk", val: 58, sub: "Elevated · gilt yields near 6%, ECB hiking", color: "#b09820" },
           ].map((item) => (
             <div key={item.label} style={{ background: "#fff", border: "1px solid #e8e4f0", borderRadius: "6px", padding: "1rem" }}>
@@ -184,33 +184,27 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         </div>
       </div>
 
-      {/* Articles */}
-      <div style={{ padding: "2rem", background: "#fff" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "2px solid #ede9f5", paddingBottom: "0.5rem", marginBottom: "1.5rem" }}>
-          <span style={{ fontSize: "11px", textTransform: "uppercase", letterSpacing: "0.1em", fontWeight: 600 }}>Latest analysis</span>
-          <a href="/articles" style={{ fontSize: "11px", color: "#aaa", cursor: "pointer", textDecoration: "none" }}>All articles →</a>
-        </div>
-        <div className="articles-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "2rem" }}>          {[
- {
-    tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
+{[
+  {
+    tag: "Markets", tagBg: "#ede9f5", tagColor: "#5a3d8a",
+    slug: "/articles/hormuz-oil-flows-recovering-prices-still-high-october-2026",
+    title: "More oil is getting through Hormuz. Prices are still above $100. Here is why.",
+    excerpt: "Crude flows through the Strait of Hormuz have recovered to around 14 million barrels per day. Brent is still above $100. The volume came back. The cost didn't.",
+    date: "October 4, 2026", read: "2 min read",
+  },
+  {
+    tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
+    slug: "/articles/brazil-election-runoff-lula-flavio-october-2026",
+    title: "Brazil is heading for a runoff on October 25. The market already has a view on who wins.",
+    excerpt: "Flávio Bolsonaro leads Lula 47% to 45% with 99.9% of votes counted. The Ibovespa rose 2.6% on Friday before the vote. The market has a preference and it isn't subtle about it.",
+    date: "October 4, 2026", read: "2 min read",
+  },
+  {
+    tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
     slug: "/articles/trump-rejects-iran-hormuz-proposal-september-2026",
     title: "Iran offered to reopen Hormuz in seven days. Trump said no.",
-    excerpt: "Iran presented a seven-day roadmap to reopen the Strait of Hormuz at the UN General Assembly on Friday. Trump rejected it on Saturday. The Wall Street Journal reported he has told aides to expect resumed bombing after the midterms.",
+    excerpt: "Iran presented a seven-day roadmap to reopen the Strait of Hormuz at the UN General Assembly. Trump rejected it on Saturday. The WSJ reported he has told aides to expect resumed bombing after the midterms.",
     date: "September 27, 2026", read: "3 min read",
-  },
-  {
-    tag: "Markets", tagBg: "#e3f2ea", tagColor: "#1e5c38",
-    slug: "/articles/bond-market-rout-yields-five-percent-september-2026",
-    title: "The bond market is doing something it hasn't done in two decades. Equities haven't caught up.",
-    excerpt: "The US 10-year yield hit 5.23% this week, its highest level since 2007. The 30-year hit levels not seen since 2004. The S&P 500 is still near its highs. That divergence is the most important thing in markets right now.",
-    date: "September 27, 2026", read: "2 min read",
-  },
-  {
-    tag: "Geopolitics", tagBg: "#e3f2ea", tagColor: "#1e5c38",
-    slug: "/articles/trump-xi-summit-trade-truce-september-2026",
-    title: "Trump and Xi just extended their trade truce. Neither side got what it wanted.",
-    excerpt: "US and Chinese officials met in New York this weekend ahead of a Washington summit. The Busan trade truce is being extended by two months. Both sides needed more time. Neither is ready to call it a deal.",
-    date: "September 20, 2026", read: "2 min read",
   },
 ].map((a) => (
   <a key={a.title} href={a.slug} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer", textDecoration: "none", display: "block" }}>
@@ -224,9 +218,6 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
     <div style={{ fontSize: "11px", color: "#aaa" }}>{a.date} · {a.read}</div>
   </a>
 ))}
-            
-        </div>
-      </div>
 
       {/* Newsletter */}
 {/* Newsletter */}
