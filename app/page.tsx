@@ -121,18 +121,18 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         <div className="hero-layout">
           <div>
             <h1 style={{ fontFamily: "Georgia, serif", fontSize: "clamp(24px, 5vw, 36px)", fontWeight: 500, lineHeight: 1.15, color: "#1a1a1a", marginBottom: "1rem", letterSpacing: "-0.5px" }}>
-              More oil is getting through Hormuz.{" "}
-              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>Prices are still above $100. Here is why.</em>
+              The midterms are two weeks away.{" "}
+              <em style={{ fontStyle: "italic", color: "#2d7a4f" }}>Markets haven't priced the scenarios yet.</em>
             </h1>
             <p style={{ fontSize: "15px", color: "#444", lineHeight: 1.75, marginBottom: "1.25rem" }}>
-              Crude flows through Hormuz have recovered to around 14 million barrels per day, close to pre-war levels. Brent is still trading above $100. The volume came back. The cost didn't. Understanding why tells you more about where energy markets are heading than the headline flow numbers do.
+              Democrats are favoured to flip the House. Republicans are likely to hold the Senate. Divided government changes what Trump can do on trade, the deficit, and the Iran war. The modal outcome on prediction markets has real consequences for the biggest trades of 2026.
             </p>
             <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "12px", color: "#888", marginBottom: "1.25rem", flexWrap: "wrap" }}>
-              <span style={{ background: "#f0edf8", color: "#6b4fa0", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Markets</span>
-              <span>October 4, 2026</span>
-              <span>2 min read</span>
+              <span style={{ background: "#e3f2ea", color: "#1e5c38", padding: "2px 9px", borderRadius: "99px", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.07em" }}>Macro</span>
+              <span>October 18, 2026</span>
+              <span>3 min read</span>
             </div>
-            <a href="/articles/hormuz-oil-flows-recovering-prices-still-high-october-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
+            <a href="/articles/us-midterms-november-3-markets-preview-october-2026" style={{ fontSize: "13px", color: "#2d7a4f", textDecoration: "none", borderBottom: "1px solid #2d7a4f", paddingBottom: "1px", cursor: "pointer", fontWeight: 500 }}>
               Read analysis →
             </a>
           </div>
@@ -140,9 +140,9 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           <div>
             <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.08em", color: "#888", marginBottom: "0.75rem", fontWeight: 500 }}>Market pulse</div>
             {[
-              { name: "Brent crude", val: "$102.59", chg: "-2.1%", up: false },
-              { name: "US 10Y yield", val: "5.28%", chg: "+0.11%", up: true },
-              { name: "Ibovespa", val: "192,114", chg: "+2.63%", up: true },
+              { name: "Brent crude", val: "$91.50", chg: "-11.7%", up: false },
+              { name: "US 10Y yield", val: "5.24%", chg: "+0.07%", up: true },
+              { name: "Gold ($/oz)", val: "$4,171", chg: "-0.54%", up: false },
             ].map((item) => (
               <div key={item.name} style={{ background: "#f7f5fc", border: "1px solid #e0ddf0", borderRadius: "6px", padding: "0.75rem 1rem", marginBottom: "8px" }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "4px" }}>
@@ -155,7 +155,6 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           </div>
         </div>
       </div>
-
       
 {/* Risk dashboard */}
       <div style={{ background: "#f4f2fa", borderTop: "1px solid #e0ddf0", borderBottom: "1px solid #e0ddf0", padding: "1.5rem" }}>
@@ -165,10 +164,10 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
         </div>
         <div className="dash-grid">
           {[
-            { label: "Global risk index", val: 92, sub: "Critical · Hormuz tanker strikes continue", color: "#a33030" },
-            { label: "US–China tension", val: 70, sub: "Elevated · truce extended to Jan 10", color: "#c0601a" },
-            { label: "Middle East volatility", val: 95, sub: "Critical · flows recovering, attacks ongoing", color: "#a33030" },
-            { label: "EUR political risk", val: 58, sub: "Elevated · gilt yields near 6%, ECB hiking", color: "#b09820" },
+            { label: "Global risk index", val: 89, sub: "Critical · midterms in 2 weeks, Iran unresolved", color: "#a33030" },
+            { label: "US–China tension", val: 70, sub: "Elevated · truce expires Jan 10, summit inconclusive", color: "#c0601a" },
+            { label: "Middle East volatility", val: 91, sub: "Critical · flows recovering, attacks continue", color: "#a33030" },
+            { label: "EUR political risk", val: 55, sub: "Elevated · ECB hiking, energy costs persist", color: "#b09820" },
           ].map((item) => (
             <div key={item.label} style={{ background: "#fff", border: "1px solid #e8e4f0", borderRadius: "6px", padding: "1rem" }}>
               <div style={{ fontSize: "10px", textTransform: "uppercase", letterSpacing: "0.07em", color: "#888", marginBottom: "6px", fontWeight: 500 }}>{item.label}</div>
@@ -183,28 +182,28 @@ fetch(`https://api.twelvedata.com/quote?symbol=${symbols}&apikey=${apiKey}`)    
           ))}
         </div>
       </div>
-
+      
 {[
   {
+    tag: "Macro", tagBg: "#ede9f5", tagColor: "#5a3d8a",
+    slug: "/articles/us-midterms-november-3-markets-preview-october-2026",
+    title: "The midterms are two weeks away. Here is what each outcome actually means for markets.",
+    excerpt: "Democrats are favoured to flip the House. Republicans are likely to hold the Senate. A divided Congress changes what Trump can do on trade, the deficit, and the Iran war.",
+    date: "October 18, 2026", read: "3 min read",
+  },
+  {
+    tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
+    slug: "/articles/brazil-runoff-week-ibovespa-flavio-final-week-october-2026",
+    title: "Brazil votes in a week. The Ibovespa is already priced for one outcome.",
+    excerpt: "Flávio Bolsonaro leads Lula in every major poll ahead of October 25. All three polls are within the margin of error. The race may be tighter than markets think.",
+    date: "October 18, 2026", read: "2 min read",
+  },
+  {
     tag: "Markets", tagBg: "#ede9f5", tagColor: "#5a3d8a",
-    slug: "/articles/hormuz-oil-flows-recovering-prices-still-high-october-2026",
-    title: "More oil is getting through Hormuz. Prices are still above $100. Here is why.",
-    excerpt: "Crude flows through the Strait of Hormuz have recovered to around 14 million barrels per day. Brent is still above $100. The volume came back. The cost didn't.",
-    date: "October 4, 2026", read: "2 min read",
-  },
-  {
-    tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
-    slug: "/articles/brazil-election-runoff-lula-flavio-october-2026",
-    title: "Brazil is heading for a runoff on October 25. The market already has a view on who wins.",
-    excerpt: "Flávio Bolsonaro leads Lula 47% to 45% with 99.9% of votes counted. The Ibovespa rose 2.6% on Friday before the vote. The market has a preference and it isn't subtle about it.",
-    date: "October 4, 2026", read: "2 min read",
-  },
-  {
-    tag: "Geopolitics", tagBg: "#ede9f5", tagColor: "#5a3d8a",
-    slug: "/articles/trump-rejects-iran-hormuz-proposal-september-2026",
-    title: "Iran offered to reopen Hormuz in seven days. Trump said no.",
-    excerpt: "Iran presented a seven-day roadmap to reopen the Strait of Hormuz at the UN General Assembly. Trump rejected it on Saturday. The WSJ reported he has told aides to expect resumed bombing after the midterms.",
-    date: "September 27, 2026", read: "3 min read",
+    slug: "/articles/gold-under-pressure-yields-cpi-october-2026",
+    title: "Gold fell below $4,200 this week. The bond market is why.",
+    excerpt: "Gold dropped to $4,171 as the US 10-year yield held near 5.24%. September CPI was due Wednesday. A reading above 3.6% would push the Fed closer to another hike at its October 28 meeting.",
+    date: "October 11, 2026", read: "2 min read",
   },
 ].map((a) => (
   <a key={a.title} href={a.slug} style={{ borderTop: "3px solid #ede9f5", paddingTop: "1rem", cursor: "pointer", textDecoration: "none", display: "block" }}>
